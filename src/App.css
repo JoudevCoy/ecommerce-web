@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "YS";
+    src: url("./assets/fonts/YoungSerif-Regular.ttf") format("TrueType");
+  }
+  @font-face {
+    font-family: "Asimov";
+    src: url("./assets/fonts/Asimov.otf") format("OpenType");
+  }
+}
+
+
+/** FORM LOGIN **/
+@layer utilities {
+  body {
+    @apply bg-bgColor font-Asimov text-textColor;
+  }
+  
+  /** Login Page **/
+  #login-page {
+    @apply w-full h-screen flex justify-center items-center;
+    .login-form {
+      @apply w-[70%] bg-primary rounded-lg py-4 px-3 flex flex-col gap-2 shadow-md;
+      label {
+        @apply text-second
+      }
+      input {
+        @apply rounded-md px-2 py-2
+      }
+    }
+  }
+  
+  
+  /** Form btn stylw **/
+  button.disabled {
+    @apply opacity-70 pointer-events-none
+  }
+  
+  /** Popup Style **/
+  .popup-alert {
+    @apply pointer-events-none fixed left-[50%] bottom-[2rem] translate-x-[-50%] bg-[#FAFAFAdd] min-w-[350px] rounded-md shadow-md
+      py-3 px-4 flex justify-between items-center gap-3;
+    span {
+      @apply text-[.9rem]
+    }
+  }
+}
